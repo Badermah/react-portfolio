@@ -1,16 +1,35 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import { AppBar, Toolbar, Typography, Box, styled } from "@mui/material";
+
+const StyledLink = styled(Link)({
+  textDecoration: "none",
+  color: "#ccc",
+  "&:hover": {
+    color: "#fff",
+  },
+});
 
 const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav>
-      <div className="nav-container">
-        <span className="name">Bader Mahdawi</span>
-        <ul className="nav-links">
+    <AppBar position="static">
+      <Toolbar>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          Bader Mahdawi
+        </Typography>
+        <Box
+          component="ul"
+          sx={{
+            display: "flex",
+            listStyle: "none",
+            justifyContent: "center",
+            gap: "10px",
+          }}
+        >
           <li>
-            <Link
+            <StyledLink
               to="/about"
               className={
                 location.pathname === "/" || location.pathname === "/about"
@@ -19,35 +38,35 @@ const Navbar = () => {
               }
             >
               About Me
-            </Link>
+            </StyledLink>
           </li>
           <li>
-            <Link
+            <StyledLink
               to="/portfolio"
               className={location.pathname === "/portfolio" ? "active" : ""}
             >
               Portfolio
-            </Link>
+            </StyledLink>
           </li>
           <li>
-            <Link
+            <StyledLink
               to="/contact"
               className={location.pathname === "/contact" ? "active" : ""}
             >
               Contact
-            </Link>
+            </StyledLink>
           </li>
           <li>
-            <Link
+            <StyledLink
               to="/resume"
               className={location.pathname === "/resume" ? "active" : ""}
             >
               Resume
-            </Link>
+            </StyledLink>
           </li>
-        </ul>
-      </div>
-    </nav>
+        </Box>
+      </Toolbar>
+    </AppBar>
   );
 };
 

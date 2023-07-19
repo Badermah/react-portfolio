@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Box, Button, TextField, Typography, Container } from "@mui/material";
 
 const Contact = () => {
   const [email, setEmail] = useState("");
@@ -44,39 +45,56 @@ const Contact = () => {
   };
 
   return (
-    <div>
-      <h2>Contact</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-field">
-          <label>Email:</label>
-          <input
+    <Container maxWidth="sm">
+      <Box sx={{ mt: 5 }}>
+        <Typography variant="h2" sx={{ mb: 3 }}>
+          Contact
+        </Typography>
+        <Box
+          component="form"
+          onSubmit={handleSubmit}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "16px",
+          }}
+        >
+          <TextField
+            label="Email"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            error={!!errors.email}
+            helperText={errors.email}
           />
-          {errors.email && <span className="error">{errors.email}</span>}
-        </div>
-        <div className="form-field">
-          <label>Subject:</label>
-          <input
+          <TextField
+            label="Subject"
             type="text"
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
+            error={!!errors.subject}
+            helperText={errors.subject}
           />
-          {errors.subject && <span className="error">{errors.subject}</span>}
-        </div>
-        <div className="form-field">
-          <label>Message:</label>
-          <textarea
+          <TextField
+            label="Message"
+            multiline
+            rows={4}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-          ></textarea>
-          {errors.message && <span className="error">{errors.message}</span>}
-        </div>
-        {submitMessage && <p className="submit-message">{submitMessage}</p>}
-        <button type="submit">Send Email</button>
-      </form>
-    </div>
+            error={!!errors.message}
+            helperText={errors.message}
+          />
+          {submitMessage && (
+            <Typography variant="body1" sx={{ color: "green" }}>
+              {submitMessage}
+            </Typography>
+          )}
+          <Button type="submit" variant="contained">
+            Send Email
+          </Button>
+        </Box>
+      </Box>
+    </Container>
   );
 };
 
