@@ -1,11 +1,10 @@
 import React from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import Portfolio from "./components/Portfolio";
-import Navbar from "./components/Navbar";
+import Portfolio from "./Pages/Portfolio";
 import Header from "./components/Header";
-import Contact from "./components/Contact";
-import About from "./components/About";
-import Resume from "./components/Resume";
+import Contact from "./Pages/Contact";
+import About from "./Pages/About";
+import Resume from "./Pages/Resume";
 import Footer from "./components/Footer";
 
 const App = () => {
