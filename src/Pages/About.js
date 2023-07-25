@@ -42,7 +42,7 @@ const About = () => {
             exciting journey in the world of web development.
           </Typography>
           <Typography paragraph sx={{ fontSize: "1.2rem" }}>
-            During his time at the University of Berkeley, Bader honed his
+            During his time at the University of Berkeley Full Stack Bootcamp, Bader honed his
             skills in various aspects of web development, including front-end
             and back-end technologies. He has a solid foundation in HTML, CSS,
             and JavaScript, allowing him to create visually appealing and

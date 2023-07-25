@@ -3,13 +3,13 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #f5f5f5;
   padding: 10px;
   text-align: center;
 }
 
 .footer p {
   margin: 0;
+  color: #fff;
 }
 
 .footer div {
@@ -17,6 +17,6 @@
 }
 
 .footer a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
