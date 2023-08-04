@@ -11,6 +11,7 @@ import project1Image from "../assets/images/RichLifeStyle.png";
 import project2Image from "../assets/images/BullitenBored.png";
 import project3Image from "../assets/images/comingsoon.webp";
 
+
 const Portfolio = () => {
   const projects = [
     {
@@ -38,7 +39,13 @@ const Portfolio = () => {
 
   return (
     <Box
-      sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        backgroundColor: "#f2f2f2", 
+        padding: "20px", 
+      }}
     >
       <Typography variant="h2" sx={{ mb: 3 }}>
         Portfolio

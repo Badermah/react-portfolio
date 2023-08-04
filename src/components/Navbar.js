@@ -14,7 +14,7 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ backgroundColor: "#000" }}>
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Bader Mahdawi
